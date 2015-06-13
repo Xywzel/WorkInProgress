@@ -55,7 +55,7 @@
 
 (defn state-two [state]
   (let [s (q/load-shader "disco-shader.glsl")]
-    (.set s "iResolution", (float (q/width)) (float (q/height)))
+    (.set s "iResolution" (float (q/width)) (float (q/height)))
     {:phase 2
      :shader (q/load-shader "disco-shader.glsl")
      :box [{:x -1}]
