@@ -20,8 +20,8 @@
   (q/text (:text state) 50 50))
 
 (defn draw-phase-two [state]
+  (.set (:shader state) "iGlobalTime" (float (/ (q/millis) 1000)))
   (q/shader (:shader state))
-  (.set q/shader "iGlobalTime" (float (/ (q/millis) 1000)))
   (q/rect 0 0 (q/width) (q/height))
   )
 

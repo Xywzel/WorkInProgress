@@ -12,6 +12,6 @@
     :draw dynamic/draw
     :update dynamic/update
     :size [640 480]
-    :renderer :p3d
+    :renderer :p2d
     :middleware [m/fun-mode]))
 

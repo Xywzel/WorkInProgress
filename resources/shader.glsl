@@ -1,3 +1,10 @@
+#ifdef GL_ES
+
+#precision mediump float
+
+#endif
+#define PROCESSING_COLOR_SHADER
+
 uniform float iGlobalTime; 
 uniform vec2 iResolution;
 

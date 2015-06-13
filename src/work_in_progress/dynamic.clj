@@ -17,6 +17,7 @@
   (case (:phase state)
     0 (d/draw-phase-zero state)
     1 (d/draw-phase-one state)
+    2 (d/draw-phase-two state)
     (q/background 0)))
 
 ; Called once before each draw
@@ -24,7 +25,7 @@
 (defn update [state]
   (let [m (q/millis)]
     (cond
-      (< m 10000) (if (= (:phase state) 0) (u/update-zero state) (u/state-zero state))
-      (< m 25000) (if (= (:phase state) 1) (u/update-one state) (u/state-one state))
+      (< m 1000)  (if (= (:phase state) 0) (u/update-zero state) (u/state-zero state))
+      (< m 2500)  (if (= (:phase state) 1) (u/update-one state) (u/state-one state))
       (< m 35000) (if (= (:phase state) 2) (u/update-two state) (u/state-two state))
       :else state)))
